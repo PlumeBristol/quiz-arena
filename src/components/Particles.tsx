@@ -449,12 +449,11 @@ function LunarBg() {
         <ellipse cx="420" cy="165" rx="32" ry="9" fill="#95908B" />
         <ellipse cx="680" cy="170" rx="24" ry="7" fill="#95908B" />
         <ellipse cx="860" cy="160" rx="30" ry="8" fill="#95908B" />
-        {/* Flag — base planted at y=180 (on the terrain surface), pole rises 80 units */}
+        {/* Plume flag — base planted at y=180 on the terrain, pole rises 80 units */}
         <line x1="180" y1="100" x2="180" y2="180" stroke="#CCCCCC" strokeWidth="3" />
-        <rect x="180" y="100" width="50" height="30" fill="#E8E8E8" stroke="#0B0B18" strokeWidth="1.5" />
-        {/* a couple of simple stripes so the flag reads as a flag */}
-        <line x1="180" y1="110" x2="230" y2="110" stroke="#FF3DA8" strokeWidth="2" />
-        <line x1="180" y1="120" x2="230" y2="120" stroke="#FF3DA8" strokeWidth="2" />
+        <rect x="180" y="100" width="60" height="36" fill="#8064CA" stroke="#0B0B18" strokeWidth="1.5" />
+        {/* Plume wordmark+icon embedded onto the flag */}
+        <image href="/plume-logo.svg" x="184" y="106" width="52" height="24" preserveAspectRatio="xMidYMid meet" />
       </svg>
     </>
   )
