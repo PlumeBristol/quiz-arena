@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    -webkit-tap-highlight-color: transparent;
+  }
+  html, body, #root { height: 100%; }
+  body {
+    font-family: 'Fredoka', system-ui, sans-serif;
+    background: #0B0B18;
+    color: #FAF6FF;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  button { -webkit-user-select: none; user-select: none; touch-action: manipulation; }
+}
+
+@layer components {
+  .stage {
+    @apply relative w-full h-full overflow-hidden;
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(255,225,74,0.28), transparent 60%),
+      radial-gradient(1000px 500px at 115% 30%, rgba(89,243,177,0.26), transparent 60%),
+      radial-gradient(900px 600px at 50% 115%, rgba(255,61,168,0.4), transparent 60%),
+      linear-gradient(180deg, #5C1675 0%, #3B0E5C 55%, #1E063A 100%);
+  }
+  .title {
+    @apply font-display font-bold tracking-tight;
+    letter-spacing: -0.01em;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center font-display font-bold rounded-full px-8 py-4 text-xl
+           bg-white text-ink shadow-pop active:translate-y-1 active:shadow-popSm transition;
+  }
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full px-3 py-1 font-display font-bold text-sm
+           bg-white/10 border border-white/15 backdrop-blur;
+  }
+}
+
+@layer utilities {
+  .text-stroke-ink {
+    -webkit-text-stroke: 2px #0B0B18;
+    paint-order: stroke fill;
+  }
+  .noise { /* disabled for perf */ }
+  /* Clean CSS ripple — starts invisible at scale 1, grows out, fades.
+     Looping via @keyframes avoids framer-motion's end-of-cycle hard-reset flash. */
+  @keyframes ripple {
+    0%   { transform: scale(1);    opacity: 0; }
+    12%  { transform: scale(1);    opacity: 0.65; }
+    100% { transform: scale(1.35); opacity: 0; }
+  }
+  .animate-ripple {
+    animation: ripple 1.6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+    will-change: transform, opacity;
+  }
+}
