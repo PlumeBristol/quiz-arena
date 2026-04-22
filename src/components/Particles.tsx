@@ -440,7 +440,7 @@ function LunarBg() {
         <div className="absolute rounded-full" style={{ left: '20%', top: '25%', width: '28%', height: '22%', background: 'rgba(70,140,70,0.65)' }} />
         <div className="absolute rounded-full" style={{ left: '55%', top: '42%', width: '30%', height: '30%', background: 'rgba(70,140,70,0.6)' }} />
       </motion.div>
-      {/* Lunar surface — gray foreground */}
+      {/* Lunar surface + flag planted in the same SVG so it stays anchored to the terrain */}
       <svg className="absolute inset-x-0 bottom-0 w-full" viewBox="0 0 1000 240" preserveAspectRatio="none" style={{ height: '38%' }}>
         <path d="M0 240 L0 160 Q80 120 160 150 Q260 110 340 140 Q460 100 560 135 Q680 95 780 130 Q880 105 1000 140 L1000 240 Z" fill="#BCB4B0" />
         <path d="M0 240 L0 200 Q120 180 220 195 Q340 170 460 195 Q600 175 720 200 Q840 185 1000 200 L1000 240 Z" fill="#7E7670" />
@@ -449,16 +449,13 @@ function LunarBg() {
         <ellipse cx="420" cy="165" rx="32" ry="9" fill="#95908B" />
         <ellipse cx="680" cy="170" rx="24" ry="7" fill="#95908B" />
         <ellipse cx="860" cy="160" rx="30" ry="8" fill="#95908B" />
+        {/* Flag — base planted at y=180 (on the terrain surface), pole rises 80 units */}
+        <line x1="180" y1="100" x2="180" y2="180" stroke="#CCCCCC" strokeWidth="3" />
+        <rect x="180" y="100" width="50" height="30" fill="#E8E8E8" stroke="#0B0B18" strokeWidth="1.5" />
+        {/* a couple of simple stripes so the flag reads as a flag */}
+        <line x1="180" y1="110" x2="230" y2="110" stroke="#FF3DA8" strokeWidth="2" />
+        <line x1="180" y1="120" x2="230" y2="120" stroke="#FF3DA8" strokeWidth="2" />
       </svg>
-      {/* American-flag silhouette planted on surface */}
-      <div
-        className="absolute"
-        style={{ left: '18%', bottom: '22%', width: 3, height: 80, background: '#CCCCCC' }}
-      />
-      <div
-        className="absolute"
-        style={{ left: '18%', bottom: 'calc(22% + 55px)', width: 36, height: 22, background: '#E8E8E8', borderLeft: '3px solid #CCCCCC' }}
-      />
     </>
   )
 }
