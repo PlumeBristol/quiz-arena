@@ -73,7 +73,7 @@ export default function App() {
   return (
     <div className="stage noise">
       <BackgroundOrbs theme={currentTheme(phase, current?.id)} />
-      {import.meta.env.DEV && <DebugBar />}
+      <DebugBar />
 
       <div className="absolute inset-0 z-10">
         {/*

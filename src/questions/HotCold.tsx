@@ -44,7 +44,7 @@ export function HotCold({ q, onFinish }: { q: HotColdQuestion; onFinish: (correc
     if (locked) return
     const fx = +(now.x / W).toFixed(4)
     const fy = +(now.y / H).toFixed(4)
-    if (import.meta.env.DEV) {
+    if (true) {
       // eslint-disable-next-line no-console
       console.log(`[HotCold] click at x=${fx}, y=${fy}  (target ${q.target.x}, ${q.target.y}, dist=${distFrac.toFixed(4)})`)
     }
@@ -118,7 +118,7 @@ export function HotCold({ q, onFinish }: { q: HotColdQuestion; onFinish: (correc
         )}
 
         {/* Dev-only: coordinate HUD + live target crosshair so we can calibrate. */}
-        {import.meta.env.DEV && (
+        {true && (
           <>
             {/* Live cursor readout */}
             <div
@@ -166,7 +166,7 @@ function MapArt({ map }: { map: 'world' | 'body' }) {
   return (
     <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg,#1A3A6B 0%, #0E1F3E 100%)' }}>
       <img
-        src="/world.svg"
+        src={`${import.meta.env.BASE_URL}world.svg`}
         alt=""
         draggable={false}
         className="absolute inset-0 w-full h-full pointer-events-none select-none"

@@ -124,7 +124,7 @@ export const useGame = create<State>((set, get) => ({
 }))
 
 // dev helper
-if (import.meta.env.DEV && typeof window !== 'undefined') {
+if (typeof window !== 'undefined') {
   ;(window as any).__game = useGame
   // Trace every store change for debugging — turn off by setting __trace = false
   ;(window as any).__trace = true

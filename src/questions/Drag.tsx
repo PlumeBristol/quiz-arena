@@ -54,7 +54,7 @@ export function Drag({ q, onFinish }: { q: DragQuestion; onFinish: (correct: num
         {/* scene */}
         <div ref={containerRef} className="relative w-[560px] h-[480px] rounded-3xl border-4 border-ink overflow-hidden shadow-pop" style={{ background: '#BEDFE8' }}>
           <img
-            src="/volcano.jpg"
+            src={`${import.meta.env.BASE_URL}volcano.jpg`}
             alt=""
             draggable={false}
             className="absolute inset-0 w-full h-full select-none pointer-events-none"

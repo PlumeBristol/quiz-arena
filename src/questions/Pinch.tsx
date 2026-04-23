@@ -88,7 +88,7 @@ export function Pinch({ q, onFinish }: { q: PinchQuestion; onFinish: (correct: b
           style={{ background: 'linear-gradient(180deg, #9FC5E8 0%, #C9D7E8 45%, #F4C88A 60%, #E59B4E 100%)' }}
         >
           <img
-            src="/bg.svg"
+            src={`${import.meta.env.BASE_URL}bg.svg`}
             alt=""
             draggable={false}
             className="absolute inset-0 w-full h-full select-none pointer-events-none"
@@ -107,7 +107,7 @@ export function Pinch({ q, onFinish }: { q: PinchQuestion; onFinish: (correct: b
             className="absolute flex flex-col items-center"
             style={{ left: '26%', bottom: GROUND_OFFSET, transform: 'translateX(-50%)' }}
           >
-            <img src="/man.svg" alt="" draggable={false} style={{ height: manPx, width: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}man.svg`} alt="" draggable={false} style={{ height: manPx, width: 'auto', display: 'block' }} />
             <div className="mt-1.5 inline-flex items-center gap-1.5 bg-ink/90 border-2 border-cyan rounded-full px-3 py-0.5 backdrop-blur-sm">
               <span className="font-display font-bold text-cyan text-xs md:text-sm leading-none">{q.reference.label}</span>
               <span className="font-mono text-white text-[11px] leading-none">{q.reference.size}m</span>
@@ -120,7 +120,7 @@ export function Pinch({ q, onFinish }: { q: PinchQuestion; onFinish: (correct: b
             style={{ left: '66%', bottom: GROUND_OFFSET, transform: 'translateX(-50%)' }}
           >
             <img
-              src="/elephant.svg"
+              src={`${import.meta.env.BASE_URL}elephant.svg`}
               alt=""
               draggable={false}
               style={{

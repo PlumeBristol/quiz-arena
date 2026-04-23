@@ -453,7 +453,7 @@ function LunarBg() {
         <line x1="180" y1="100" x2="180" y2="180" stroke="#CCCCCC" strokeWidth="3" />
         <rect x="180" y="100" width="60" height="36" fill="#8064CA" stroke="#0B0B18" strokeWidth="1.5" />
         {/* Plume wordmark+icon embedded onto the flag */}
-        <image href="/plume-logo.svg" x="184" y="106" width="52" height="24" preserveAspectRatio="xMidYMid meet" />
+        <image href={`${import.meta.env.BASE_URL}plume-logo.svg`} x="184" y="106" width="52" height="24" preserveAspectRatio="xMidYMid meet" />
       </svg>
     </>
   )
